@@ -1,0 +1,4 @@
+timestamp,filename,status,model_used,error_message
+2026-11-04T15:10:12Z,input_example.txt,SUCCESS,llama3.2,None
+2026-11-04T15:10:15Z,corrupted_draft.txt,EMPTY_FILE,llama3.2,Validation failed: Input file is empty or contains only whitespace.
+2026-11-04T15:10:45Z,q4_architecture_raw.txt,TIMEOUT_ERROR,llama3.2,Ollama API request timed out after 30 seconds at http://localhost:11434/api/generate.

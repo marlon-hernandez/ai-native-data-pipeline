@@ -89,6 +89,8 @@ def log_pipeline_event(
 
 def read_text_file(file_path: Path) -> str:
     content = file_path.read_text(encoding="utf-8")
+    if not content or not content.strip():
+        raise EmptyFileError("Validation failed: Input file is empty or contains only whitespace.")
     return content.strip()
 
 
