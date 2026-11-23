@@ -20,7 +20,7 @@ ai-native-data-pipeline/
 │   └── main.py               # Batch processor and Ollama client
 ├── tests/
 │   └── test_pipeline.py      # Unit tests for fault isolation and CSV audit logging
-├── .env                      # Default local Ollama configuration
+├── .env.example              # Environment variable template
 ├── requirements.txt          # Dependencies
 └── README.md
 ```
@@ -70,7 +70,17 @@ python src/main.py
 
 ### Configuration (`.env`)
 
-Default Ollama settings are pre-configured in `.env` and loaded automatically on startup:
+Copy `.env.example` to `.env` before running:
+
+```bash
+# Linux / macOS
+cp .env.example .env
+
+# Windows (PowerShell)
+Copy-Item .env.example .env
+```
+
+Default values in `.env.example`:
 
 ```ini
 OLLAMA_API_URL=http://localhost:11434/api/generate
