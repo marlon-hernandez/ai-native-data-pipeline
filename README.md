@@ -20,6 +20,8 @@ ai-native-data-pipeline/
 │   └── main.py               # Batch processor and Ollama client
 ├── tests/
 │   └── test_pipeline.py      # Unit tests for fault isolation and CSV audit logging
+├── Dockerfile                # Container image for the batch pipeline
+├── docker-compose.yml        # Containerized execution against local Ollama
 ├── .env.example              # Environment variable template
 ├── requirements.txt          # Dependencies
 └── README.md
@@ -39,7 +41,20 @@ Each run appends `[timestamp, filename, status, model_used, error_message]` to `
 
 ## Local Setup
 
-### Prerequisites
+### Quick Start with Docker Compose
+
+Run the pipeline without creating a local virtual environment (requires Ollama running locally with `llama3.2`):
+
+```bash
+git clone https://github.com/marlon-hernandez/ai-native-data-pipeline.git
+cd ai-native-data-pipeline
+cp .env.example .env
+docker compose up --build
+```
+
+### Manual Local Setup (Without Docker)
+
+#### Prerequisites
 1. Python 3.10+
 2. [Ollama](https://ollama.com/) running locally with `llama3.2` pulled:
    ```bash

@@ -1,0 +1,12 @@
+services:
+  pipeline:
+    build: .
+    container_name: ai_data_pipeline
+    volumes:
+      - ./data:/app/data
+    environment:
+      OLLAMA_API_URL: http://host.docker.internal:11434/api/generate
+      OLLAMA_MODEL: ${OLLAMA_MODEL:-llama3.2}
+      OLLAMA_TIMEOUT: ${OLLAMA_TIMEOUT:-30}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
