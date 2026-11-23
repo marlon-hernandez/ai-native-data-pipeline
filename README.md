@@ -1,5 +1,7 @@
 # AI-Native Data Pipeline
 
+[![CI](https://github.com/marlon-hernandez/ai-native-data-pipeline/actions/workflows/ci.yml/badge.svg)](https://github.com/marlon-hernandez/ai-native-data-pipeline/actions/workflows/ci.yml)
+
 Batch ETL script in Python that reads raw `.txt` engineering notes from `data/`, summarizes them into structured Markdown using a local Ollama LLM, and writes execution records to `data/pipeline_log.csv`.
 
 ## Overview
